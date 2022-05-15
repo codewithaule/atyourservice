@@ -1,0 +1,47 @@
+{% extends 'bit/base.html' %}
+
+{% block title %}Home | {% endblock %}
+<style>
+ 
+    .image{
+        width: 200px;
+        height: 121px;
+	 }   
+  </style>
+ 
+
+{% block content %} 
+    <section class="hero ">
+        <div class="hero-body">
+            <div class="container">
+                <section class="section">
+                    <div class="w3-container w3-center">
+                        <div class="column is-8 is-offset-2">
+                            {% for post in posts %}
+                                <div class="content is-medium">
+                                    <a href="{% url 'post_detail' post.category.slug post.slug  %}">
+                                        {% if post.image %}
+                                        <figure class="image" >
+                                                <div class="w3-row-padding w3-margin-top">
+                                                    <div class="w3-third">
+                                                      <div class="w3-card-4">
+                                                          <img src="{{ post.image.url }}"style="width:50%"  >
+                                                       </div>
+                                                    </div>
+                                                </div>
+                                            </figure> 
+                                        {% endif %}
+                                        
+                                       <h2 class="subtitle is-4">{{post.created_at|date:'M-d-Y '}}</h2>
+                                       <h1 style="text-shadow:1px 1px 0 #444"> {{post.title }}</h1>
+                                       <p class="w3-wide">{{post.intro}}</p>
+                                    </a>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+{% endblock %}

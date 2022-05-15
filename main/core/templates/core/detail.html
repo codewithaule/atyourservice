@@ -1,0 +1,56 @@
+{% extends "bit/base.html" %}
+
+{% block title%}{{ post.title }} | {% endblock %}
+
+{% block content %}
+<section class="section"  id="contact">
+    {% if post.image %}
+        <figure class="image mb-6" >
+            <img src="{{  post.image.url }}" style="width:50%">
+        </figure>
+    {% endif %}
+
+
+    <div class="columns">
+        <div class="column is-8 is-offset-2">
+            <div class="content is-medium">
+                <h2 class="subtitle is-4">{{ post.created_at|date:'M-d-Y '}}</h2>
+                <h1 class="title" >{{ post.title }}</h1>
+                <p><strong>{{ post.intro }}</strong></p>
+                <p "w3-wide">{{ post.body }}</p>
+
+                <p><small>Category: <a href="{% url 'post_detail' post.category.slug post.slug  %}"> {{ post.category }} </a></small></p>
+                
+                <hr>
+                <div class="container">
+                    <div class="row align-items-center"> 
+                        <div class="col-lg-6 offset-lg-1">
+                            <h2 class="subtitle is-4">Comments</h2>
+                            <form  method="post" class="form-inline">
+
+                                {% csrf_token %}
+                         
+                                {{ form.as_p }}
+                                <div class="field">
+                                    <div class="control">
+                                        <button class="button is-success"> submit comment</button>
+                                    </div>
+                                </div>
+                                 
+                            </form>
+                            {% for comment in  post.comments.all %}
+                            <article class="media">
+                                <div class="media-content">
+                                    <strong>{{comment.name}}</strong>  <small>{{comment.created_at|timesince}} ago</small><br>
+                                        {{ comment.body }}
+                                </div>
+                            </article>
+                            {% endfor%}
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock  %}

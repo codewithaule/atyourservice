@@ -1,0 +1,116 @@
+{% extends 'bit/base.html' %}
+
+{% load static %}
+
+{% block title %}Home | {% endblock %}
+
+{% block content %}
+<div class="body-1" id="services">
+    <h1>Enjoy Quality Services</h1>
+    <div class="body-1-content">
+        <h2>Our Services</h2>
+        <div class="web-dev"></div>
+    </div>
+</div>
+<section>
+    <div class="body-1" id="services">
+      <div class="body-1-content">
+        <div class="card">
+          <div class="container">
+            <h3><b>web development</b></h3> 
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the
+                1500s, when an unknown printer took a galley of type and scrambled it to
+                make a type specimen book.
+            </p> 
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+<section>
+    <div class="body-1" id="services">
+      <div class="body-1-content"> 
+        <div class="card">
+          <div class="container">
+            <h3><b>Logo design</b></h3> 
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the
+                1500s, when an unknown printer took a galley of type and scrambled it to
+                make a type specimen book.
+            </p> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="body-1" id="services">
+      <div class="body-1-content">
+        <div class="card">
+          <div class="container">
+            <h3><b>Graphics design</b></h3> 
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the
+                1500s, when an unknown printer took a galley of type and scrambled it to
+                make a type specimen book.
+            </p> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="home">
+    <div class="container text-center">
+      <div class="row justify-content-center">
+         <div class="col-md-10"> 
+           <div id="slideshow-example" data-component="slideshow" >
+             <div role="list">
+              <h5 style="color:#007FFF;"><b>Latest design on <span style="color:#EE82EE;">Graphics&Logo</span></b></h5> 
+               <div class="slide">
+                 <img  src="{% static 'assets/img/let.jpg' %}" alt="atyourservice" style="width:50% ">
+                </div>
+                <div class="slide">
+                  <img  src="{% static 'assets/img/aty.jpg' %}" alt="bd" style="width:50%">
+                </div>
+                <div class="slide">
+                  <img  src="{% static 'assets/img/pix.jpg' %}" alt="ft" style="width:50% ">
+                </div>
+                <div class="slide">
+                  <img  src="{% static 'assets/img/at.jpg' %}" alt="ft" style="width:50% ">
+                </div>
+                <div class="slide">
+                  <img  src="{% static 'assets/img/fog.jpg' %}" alt="ft" style="width:50% ">
+                </div>
+                <div class="slide">
+                  <img  src="{% static 'assets/img/atyy.jpg' %}" alt="ft" style="width:50% ">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+   
+       
+    
+  <br>
+  <div>
+    <p>
+      Receive your design within a few business days.
+    </p>
+  </div>
+ 
+ 
+{% endblock content %}
+
+
+{% if user.is_authenticated %}
+
+  Hi {{ user.username }}!
+{% else %}
+
+  <p>You are not logged in</p>
+
+  <a href="{% url 'login' %}">Log In</a>
+{% endif %}

@@ -1,0 +1,103 @@
+*{
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+html{
+    font-family: "LucidaSans", Sans-serif;
+}
+.nav-link{
+    color: red;
+}
+ 
+@media only screen and (min-width: 600px) {
+    .col-s-9{width: 75%;}
+    .col-s-12{width: 100%;}
+
+}
+@media only screen and (min-width: 768px){
+    .col-6{width: 50%;}
+    .col-3{width: 25%;}
+}
+ 
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: color-mix(in srgb,purple,yellow);
+}
+ 
+ 
+.navbar {
+   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.navbar .nav-link {
+   font-weight: 700;
+   font-size: 12px;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   color: rgb(31, 120, 150);
+}
+  
+h1,
+h2,
+h3{
+    text-align: center;
+    color: rgb(31, 120, 150);
+}
+h1{
+    margin: 20px;
+}
+h2{
+    margin: 10px;
+}
+ 
+button{
+    text-align: right;
+    display: inline-flex;
+}
+.body-1{
+    max-width: 800px;
+    margin-bottom: 30px;
+}
+ 
+.logo{
+    width: 200px;
+    height: 100px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 80%;
+  background-color: #fffff0 ;
+  padding: 15px;
+  color: #3e8ede;
+  text-align: center;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 16px;
+   
+}
+[data-component="slideshow"] .slide {
+    display: none;
+    text-align:center;
+    
+   
+}
+
+[data-component="slideshow"] .slide.active {
+    display: block;
+  
+}
+ 
+ 
+ 
+ 
+ 
